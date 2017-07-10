@@ -12,5 +12,6 @@ The npm tasks are:
 
 * `npm run clean` -- Deletes the `dist` folder
 * `npm run build` -- Compiles the presentation into the `dist` folder (you'll need [dos2unix](http://linuxcommand.org/man_pages/dos2unix1.html) on your machine)
-* `npm start` -- Starts a local server to serve the presentation
+* `npm run serve` -- Starts a local server to serve the presentation
+* `npm start` -- Starts a local server and rebuilds the project if files change
 * `npm run deploy` -- Deploys the presentation to the Github Page
