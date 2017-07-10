@@ -177,49 +177,6 @@ console.log(greet(name));</code></pre>
             </div>
           </div>
         </div>
-        <div class="ft-page" data-id="esnext">
-          <div class="stack-center">
-            <div class="stacked-center">
-              <div class="column-container">
-                <div class="left-column left-align">
-                  <h2>app.ts</h2>
-                  <pre><code class="typescript">function getName() {
-   return Promise.resolve('John');
-}
-async function greetPerson() {
-   let person = await getName();
-   return `Hello ${person}!`;
-}
-console.log(greetPerson());</code></pre>
-                  <!-- async/await-->
-                </div>
-                <div class="middle-column ft-fragment">⇒</div>
-                <div class="right-column left-align ft-fragment">
-                  <h2>app.js</h2>
-                  <pre><code class="javascript">var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-   // snip
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-   // snip
-};
-function getName() {
-   return Promise.resolve('John');
-}
-function greetPerson() {
-   return __awaiter(this, void 0, void 0, function () {
-       var person;
-       return __generator(this, function (_a) {
-         // snip
-       });
-   });
-}
-console.log(greetPerson());</code></pre>
-                  <!-- transpiled for ES5-->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         <div class="ft-page" data-id="js-checks">
           <div class="stack-center">
             <div class="stacked-center">
@@ -447,45 +404,6 @@ new Animal("Cat").name; // error!</code></pre>
             </div>
           </div>
         </div>
-        <div class="ft-page" data-id="generics">
-          <div class="stack-center">
-            <div class="stacked-center">
-              <h2>Generics</h2>
-              <p class="ft-fragment">
-                Example syntax:
-                <code class="typescript">Array&lt;number&gt;</code>
-              </p>
-              <pre class="ft-fragment left-align"><code class="typescript">class Queue&lt;T&gt; {
-   private data = [];
-   push = (item: T) =&gt; this.data.push(item);
-   pop = (): T =&gt; this.data.shift();
-}</code></pre>
-              <pre class="ft-fragment left-align"><code class="typescript">const queue = new Queue&lt;number&gt;();
-queue.push(0);</code></pre>
-              <!-- familiar if you work with OOP languages like Java, C++-->
-              <!-- typically used with classes-->
-            </div>
-          </div>
-        </div>
-        <div class="ft-page" data-id="type-assertions">
-          <div class="stack-center">
-            <div class="stacked-center">
-              <h2>“Casting” (Type Assertions)</h2>
-              <div class="ft-fragment">
-                <p>Sometimes you know more about a variable’s type than TS does.</p>
-                <p><em>Use only to when you have to,</em>
-                  because TS assumes you are correct in your assertion.
-                </p>
-              </div>
-              <div class="ft-fragment left-align">
-                <pre><code class="typescript">function handler(event: Event) {
-   let mouseEvent = event as MouseEvent; // preferred
-   let mouseEvent = &lt;MouseEvent&gt;event;
-}</code></pre>
-              </div>
-            </div>
-          </div>
-        </div>
         <div class="ft-page" data-id="type-declarations-easy">
           <div class="stack-center">
             <div class="stacked-center">
@@ -648,110 +566,6 @@ import * as f from "foobar";</code></pre>
                   <code>system</code>,
                   <code>umd</code>
                 </li>
-                <li class="ft-fragment"><code>outFile</code>: concatenate and emit to a single file</li>
-                <li class="ft-fragment"><code>outDir</code>: output folder</li>
-                <li class="ft-fragment"><code>removeComments</code>: strips comments except those beginning with
-                  
-                  <code>/*!</code>
-                </li>
-                <li class="ft-fragment"><code>declaration</code>: output a
-                  
-                  <code>.d.ts</code>
-                  
-                  file
-                </li>
-                <li class="ft-fragment"><code>sourceMap</code>: output a
-                  
-                  <code>.map</code>
-                  
-                  file
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="ft-page" data-id="lib-options">
-          <div class="stack-center">
-            <div class="stacked-center">
-              <h2>Included Declarations</h2>
-              <pre class="ft-fragment left-align"><code class="json" style="font-size:1em;line-height:1.25em;">{
- "compilerOptions": {
-   "lib": [
-     "es5",
-     "es2015",
-     "es2016",
-     "es2017",
-     "esnext",
-     "dom",
-     "dom.iterable",
-     "webworker",
-     "scripthost",
-     // others ...
-   ]
- }
-}</code></pre>
-              <p class="ft-fragment">
-                If not specified, TS will include libs based on the
-                <code>target</code>
-                
-                version.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="ft-page" data-id="js-options">
-          <div class="stack-center">
-            <div class="stacked-center">
-              <h2>Migration Options</h2>
-              <pre class="ft-fragment left-align"><code class="json">{
- "compilerOptions": {
-   "allowJs": true,
-   "checkJs": true
- }
-}</code></pre>
-              <p class="ft-fragment">
-                Type annotations are
-                <em>not</em>
-                
-                allowed in JS files; only checks that ES is valid.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="ft-page" data-id="strict-options">
-          <div class="stack-center">
-            <div class="stacked-center">
-              <h2>Stricter Checking</h2>
-              <p>Enable these after a migration, or from the start, for tighter type checking.</p>
-              <ul>
-                <li class="ft-fragment"><code>alwaysStrict</code>: parse in strict mode and emit
-                  
-                  <code>"use strict"</code>
-                </li>
-                <li class="ft-fragment"><code>strictNullChecks</code>:
-                  
-                  <code>null</code>
-                  
-                  and
-                  
-                  <code>undefined</code>
-                  
-                  must be explicitly added to types
-                </li>
-                <li class="ft-fragment"><code>noImplicitAny</code>: error if any expression or declaration has an
-                  
-                  <em>implied</em>
-                  <code>any</code>
-                  
-                  type
-                </li>
-                <li class="ft-fragment"><code>noImplicitThis</code>: catches instances where
-                  
-                  <code>this</code>
-                  
-                  is bound to the global context
-                </li>
-                <li class="ft-fragment"><code>strict</code>: all of the above</li>
               </ul>
             </div>
           </div>
@@ -778,7 +592,6 @@ import * as f from "foobar";</code></pre>
                 <li class="ft-fragment">Plugins – gulp, webpack loader (ts-loader), browserify (tsify)</li>
                 <li class="ft-fragment">Linting
                   <ul>
-                    <li>TS has some built-in linting options</li>
                     <li><a href="https://palantir.github.io/tslint/">tslint</a></li>
                     <li><a href="https://github.com/eslint/typescript-eslint-parser">typescript-eslint-parser</a></li>
                   </ul>
@@ -802,7 +615,7 @@ import * as f from "foobar";</code></pre>
                     <li>In general, have to know more about how the compiler works</li>
                   </ul>
                 </li>
-                <li class="ft-fragment">TS annotations live inside your JS code.
+                <li class="ft-fragment">Type annotations live inside your JS code.
                   <ul>
                     <li class="ft-fragment">Look at alternatives (Flow, Closure) if you want annotations outside your code.</li>
                   </ul>
