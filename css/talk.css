@@ -1,0 +1,75 @@
+a {
+  cursor: pointer;
+}
+
+code {
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+}
+
+pre code {
+  width: 100%;
+}
+
+.flowtime ul ul li {
+  margin-bottom: 0;
+}
+
+h1.bright {
+  color: #fff
+}
+
+.left-align {
+  text-align: left;
+}
+
+.pre {
+  white-space: pre;
+}
+
+.column-container {
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.column-container > .column {
+  width: 50%;
+  padding: 1em;
+}
+
+.column-container > .left-column {
+  width: 45%;
+  padding: 1em;
+}
+
+.column-container > .middle-column {
+  width: 10%;
+  padding: 0.75em 0.5em 0;
+  font-size: 5em;
+  color: #ccc;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.column-container > .right-column {
+  width: 45%;
+  padding: 1em;
+}
+
+.left-column code,
+.right-column code {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+
+.ft-page {
+  padding: 0;
+}
+
+.flowtime .stack-center {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
