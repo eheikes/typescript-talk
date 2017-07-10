@@ -107,8 +107,7 @@
                 |const name = 'John';
                 |console.log(greet(name));
             // other than the filename, just normal JS
-          .middle-column.ft-fragment
-            div ⇒
+          .middle-column.ft-fragment ⇒
           .right-column.left-align.ft-fragment
             h2 app.js
             pre
@@ -137,8 +136,7 @@
                 |}
                 |console.log(greetPerson());
             // async/await
-          .middle-column.ft-fragment
-            div ⇒
+          .middle-column.ft-fragment ⇒
           .right-column.left-align.ft-fragment
             h2 app.js
             pre
@@ -183,8 +181,7 @@
                 |        a + b;
                 |}
             // Stuff that is valid in JS, but you wouldn't want to do.
-          .middle-column.ft-fragment
-            div ⇒
+          .middle-column.ft-fragment ⇒
           .right-column.left-align.ft-fragment
             pre
               code.javascript
@@ -220,8 +217,7 @@
                 |const name = 3;
                 |console.log(greet(name));
             // other than the filename, just normal JS
-          .middle-column.ft-fragment
-            div ⇒
+          .middle-column.ft-fragment ⇒
           .right-column.left-align.ft-fragment
             pre
               code.javascript
@@ -236,37 +232,37 @@
     .stack-center
       .stacked-center
         h2 Basic Types
-        .column-container
-          .column
-            .ft-fragment.left-align
-              h3 Primitives
-              pre
-                code
-                  |let num: number;
-                  |let str: string;
-                  |let bool: boolean;
-                  |let u: undefined = undefined;
-                  |let n: null = null;
-            .ft-fragment.left-align
-              h3 Arrays
-              pre
-                code.typescript let boolArray: boolean[];
-          .column
-            .ft-fragment.left-align
-              h3
-                code Any
-              pre
-                code.typescript
-                  |let notSure: any = 4;
-                  |notSure = "maybe a string instead";
-                  |notSure.ifItExists();
-            .ft-fragment.left-align
-              h3 Functions
-              pre
-                code.typescript
-                  |function getHello(name: string): string { return `Hello ${name}`; }
-                  |function warn(): void { alert("Warning!"); }
-                  |function error(): never { throw new Error("Error!"); }
+        .ft-fragment.left-align
+          h3 Primitives
+          pre
+            code
+              |let num: number;
+              |let str: string;
+              |let bool: boolean;
+              |let u: undefined = undefined;
+              |let n: null = null;
+        .ft-fragment.left-align
+          h3 Arrays
+          pre
+            code.typescript let boolArray: boolean[];
+  .ft-page(data-id="basic-types-2")
+    .stack-center
+      .stacked-center
+        .left-align
+          h3
+            code Any
+          pre
+            code.typescript
+              |let notSure: any = 4;
+              |notSure = "maybe a string instead";
+              |notSure.ifItExists();
+        .ft-fragment.left-align
+          h3 Functions
+          pre
+            code.typescript
+              |function getHello(name: string): string { return `Hello ${name}`; }
+              |function warn(): void { alert("Warning!"); }
+              |function error(): never { throw new Error("Error!"); }
   .ft-page(data-id="extended-types")
     .stack-center
       .stacked-center
@@ -313,8 +309,7 @@
                 |  x: number; y: number;
                 |}
                 |let p: Point = new MyPoint();
-          .middle-column.ft-fragment
-            div ⇒
+          .middle-column.ft-fragment ⇒
           .right-column.left-align.ft-fragment
             pre
               code.javascript
@@ -420,7 +415,7 @@
   .ft-page(data-id="type-declarations-easy")
     .stack-center
       .stacked-center
-        h1 3rd-Party Type Declarations (The Easy Way)
+        h1 3rd-Party Type Declarations (Easy Way)
         pre
           code.typescript import * as $ from "jquery";
         .column-container
@@ -448,7 +443,7 @@
   .ft-page(data-id="type-declarations-harder")
     .stack-center
       .stacked-center
-        h1 3rd-Party Type Declarations (The Slightly Harder Way)
+        h1 3rd-Party Type Declarations (Slightly Harder Way)
         p.ft-fragment Create your own declarations in the
           |
           |

@@ -162,9 +162,7 @@ const name = 'John';
 console.log(greet(name));</code></pre>
                   <!-- other than the filename, just normal JS-->
                 </div>
-                <div class="middle-column ft-fragment">
-                  <div>⇒</div>
-                </div>
+                <div class="middle-column ft-fragment">⇒</div>
                 <div class="right-column left-align ft-fragment">
                   <h2>app.js</h2>
                   <pre><code class="javascript">function greet(person) {
@@ -195,9 +193,7 @@ async function greetPerson() {
 console.log(greetPerson());</code></pre>
                   <!-- async/await-->
                 </div>
-                <div class="middle-column ft-fragment">
-                  <div>⇒</div>
-                </div>
+                <div class="middle-column ft-fragment">⇒</div>
                 <div class="right-column left-align ft-fragment">
                   <h2>app.js</h2>
                   <pre><code class="javascript">var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
@@ -244,9 +240,7 @@ function add(a,b) {
 }</code></pre>
                   <!-- Stuff that is valid in JS, but you wouldn't want to do.-->
                 </div>
-                <div class="middle-column ft-fragment">
-                  <div>⇒</div>
-                </div>
+                <div class="middle-column ft-fragment">⇒</div>
                 <div class="right-column left-align ft-fragment">
                   <pre><code class="javascript">[] + [];
 // ^ Operator '+' cannot be applied to types 
@@ -288,9 +282,7 @@ const name = 3;
 console.log(greet(name));</code></pre>
                   <!-- other than the filename, just normal JS-->
                 </div>
-                <div class="middle-column ft-fragment">
-                  <div>⇒</div>
-                </div>
+                <div class="middle-column ft-fragment">⇒</div>
                 <div class="right-column left-align ft-fragment">
                   <pre><code class="javascript">function greet(person) {
    return "Hello " + person + "!";
@@ -308,35 +300,35 @@ console.log(greet(name));
           <div class="stack-center">
             <div class="stacked-center">
               <h2>Basic Types</h2>
-              <div class="column-container">
-                <div class="column">
-                  <div class="ft-fragment left-align">
-                    <h3>Primitives</h3>
-                    <pre><code>let num: number;
+              <div class="ft-fragment left-align">
+                <h3>Primitives</h3>
+                <pre><code>let num: number;
 let str: string;
 let bool: boolean;
 let u: undefined = undefined;
 let n: null = null;</code></pre>
-                  </div>
-                  <div class="ft-fragment left-align">
-                    <h3>Arrays</h3>
-                    <pre><code class="typescript">let boolArray: boolean[];</code></pre>
-                  </div>
-                </div>
-                <div class="column">
-                  <div class="ft-fragment left-align">
-                    <h3><code>Any</code></h3>
-                    <pre><code class="typescript">let notSure: any = 4;
+              </div>
+              <div class="ft-fragment left-align">
+                <h3>Arrays</h3>
+                <pre><code class="typescript">let boolArray: boolean[];</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ft-page" data-id="basic-types-2">
+          <div class="stack-center">
+            <div class="stacked-center">
+              <div class="left-align">
+                <h3><code>Any</code></h3>
+                <pre><code class="typescript">let notSure: any = 4;
 notSure = "maybe a string instead";
 notSure.ifItExists();</code></pre>
-                  </div>
-                  <div class="ft-fragment left-align">
-                    <h3>Functions</h3>
-                    <pre><code class="typescript">function getHello(name: string): string { return `Hello ${name}`; }
+              </div>
+              <div class="ft-fragment left-align">
+                <h3>Functions</h3>
+                <pre><code class="typescript">function getHello(name: string): string { return `Hello ${name}`; }
 function warn(): void { alert("Warning!"); }
 function error(): never { throw new Error("Error!"); }</code></pre>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -386,9 +378,7 @@ class MyPoint implements Point {
 }
 let p: Point = new MyPoint();</code></pre>
                 </div>
-                <div class="middle-column ft-fragment">
-                  <div>⇒</div>
-                </div>
+                <div class="middle-column ft-fragment">⇒</div>
                 <div class="right-column left-align ft-fragment">
                   <pre><code class="javascript">var p1 = {
    x: 1, y: 2, z: 3
@@ -499,7 +489,7 @@ queue.push(0);</code></pre>
         <div class="ft-page" data-id="type-declarations-easy">
           <div class="stack-center">
             <div class="stacked-center">
-              <h1>3rd-Party Type Declarations (The Easy Way)</h1>
+              <h1>3rd-Party Type Declarations (Easy Way)</h1>
               <pre><code class="typescript">import * as $ from "jquery";</code></pre>
               <div class="column-container">
                 <div class="column left-align">
@@ -530,7 +520,7 @@ queue.push(0);</code></pre>
         <div class="ft-page" data-id="type-declarations-harder">
           <div class="stack-center">
             <div class="stacked-center">
-              <h1>3rd-Party Type Declarations (The Slightly Harder Way)</h1>
+              <h1>3rd-Party Type Declarations (Slightly Harder Way)</h1>
               <p class="ft-fragment">
                 Create your own declarations in the
                 <code>.ts</code>
