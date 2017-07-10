@@ -77,22 +77,22 @@
   .ft-page(data-id="installing")
     .stack-center
       .stacked-center
-        p
-          code $ npm install -g typescript
+        pre
+          code.bash $ npm install -g typescript
   .ft-page(data-id="compiling")
     .stack-center
       .stacked-center
         div.left-align
-          p
-            code.pre $ tsc app.ts
-          p.ft-fragment
-            code.pre $ tsc app     # assumes .ts extension
-          p.ft-fragment
-            code.pre $ tsc         # uses config
-          p.ft-fragment
-            code.pre $ tsc -p src  # set the root folder
-          p.ft-fragment
-            code.pre $ tsc -w      # watch for changes
+          pre
+            code.bash $ tsc app.ts
+          pre.ft-fragment
+            code.bash $ tsc app     # assumes .ts extension
+          pre.ft-fragment
+            code.bash $ tsc         # uses config
+          pre.ft-fragment
+            code.bash $ tsc -p src  # set the root folder
+          pre.ft-fragment
+            code.bash $ tsc -w      # watch for changes
   .ft-page(data-id="transpilation")
     .stack-center
       .stacked-center
@@ -100,7 +100,7 @@
           .left-column.left-align
             h2 app.ts
             pre
-              code
+              code.typescript
                 |function greet(person) {
                 |    return `Hello ${person}!`;
                 |}
@@ -112,7 +112,7 @@
           .right-column.left-align.ft-fragment
             h2 app.js
             pre
-              code
+              code.javascript
                 |function greet(person) {
                 |    return "Hello " + person + "!";
                 |}
@@ -127,7 +127,7 @@
           .left-column.left-align
             h2 app.ts
             pre
-              code
+              code.typescript
                 |function getName() {
                 |    return Promise.resolve('John');
                 |}
@@ -142,7 +142,7 @@
           .right-column.left-align.ft-fragment
             h2 app.js
             pre
-              code
+              code.javascript
                 |var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
                 |    // snip
                 |};
@@ -168,7 +168,7 @@
         .column-container
           .left-column.left-align
             pre
-              code
+              code.typescript
                 |[] + [];
                 |
                 |
@@ -187,7 +187,7 @@
             div ⇒
           .right-column.left-align.ft-fragment
             pre
-              code
+              code.javascript
                 |[] + [];
                 |// ^ Operator '+' cannot be applied to types 
                 |//   'undefined[]' and 'undefined[]'.
@@ -213,7 +213,7 @@
         .column-container
           .left-column.left-align
             pre
-              code
+              code.typescript
                 |function greet(person: string) {
                 |    return `Hello ${person}!`;
                 |}
@@ -224,7 +224,7 @@
             div ⇒
           .right-column.left-align.ft-fragment
             pre
-              code
+              code.javascript
                 |function greet(person) {
                 |    return "Hello " + person + "!";
                 |}
@@ -250,20 +250,20 @@
             .ft-fragment.left-align
               h3 Arrays
               pre
-                code let boolArray: boolean[];
+                code.typescript let boolArray: boolean[];
           .column
             .ft-fragment.left-align
               h3
                 code Any
               pre
-                code
+                code.typescript
                   |let notSure: any = 4;
                   |notSure = "maybe a string instead";
                   |notSure.ifItExists();
             .ft-fragment.left-align
               h3 Functions
               pre
-                code
+                code.typescript
                   |function getHello(name: string): string { return `Hello ${name}`; }
                   |function warn(): void { alert("Warning!"); }
                   |function error(): never { throw new Error("Error!"); }
@@ -274,18 +274,18 @@
         div.ft-fragment.left-align
           h3 Enum
           pre
-            code
+            code.typescript
               |enum Color {Red, Green, Blue}
               |let c: Color = Color.Green;
         div.ft-fragment.left-align
           h3 Union
           pre
-            code
+            code.typescript
               |let numOrString: number|string;
         div.ft-fragment.left-align
           h3 Optional Parameter
           pre
-            code
+            code.typescript
               |function getHello(firstName: string, lastName?: string): string {
               |    return `Hello ${firstName} ${lastName || ''}`;
               |}
@@ -298,7 +298,7 @@
         .column-container.left-align
           .left-column.left-align
             pre
-              code
+              code.typescript
                 |interface Point {
                 |    x: number;
                 |    y: number;
@@ -317,7 +317,7 @@
             div ⇒
           .right-column.left-align.ft-fragment
             pre
-              code
+              code.javascript
                 |var p1 = {
                 |    x: 1, y: 2, z: 3
                 |};
@@ -337,7 +337,7 @@
         div.ft-fragment.left-align
           h3 Readonly
           pre
-            code
+            code.typescript
               |interface Point {
               |    readonly x: number;
               |    readonly y: number;
@@ -345,7 +345,7 @@
         div.ft-fragment.left-align
           h3 Public/Private/Protected
           pre
-            code
+            code.typescript
               |class Animal {
               |    private name: string;
               |    constructor(theName: string) { this.name = theName; }
@@ -358,9 +358,9 @@
         p Typescript can often figure out types by examining your code.
         .left-align
           pre.ft-fragment
-            code let x = 3;
+            code.typescript let x = 3;
           pre.ft-fragment
-            code let x = [0, 1, null];
+            code.typescript let x = [0, 1, null];
         p.ft-fragment So type annotations are only needed where you want to:
           ul
             li.ft-fragment enforce a type,
@@ -386,16 +386,16 @@
         p.ft-fragment Example syntax:
           |
           |
-          code Array&lt;number&gt;
+          code.typescript Array&lt;number&gt;
         pre.ft-fragment.left-align
-          code
+          code.typescript
             |class Queue&lt;T&gt; {
             |    private data = [];
             |    push = (item: T) =&gt; this.data.push(item);
             |    pop = (): T =&gt; this.data.shift();
             |}
         pre.ft-fragment.left-align
-          code
+          code.typescript
             |const queue = new Queue&lt;number&gt;();
             |queue.push(0);
         // familiar if you work with OOP languages like Java, C++
@@ -412,7 +412,7 @@
             | because TS assumes you are correct in your assertion.
         .ft-fragment.left-align
           pre
-            code
+            code.typescript
               |function handler(event: Event) {
               |    let mouseEvent = event as MouseEvent; // preferred
               |    let mouseEvent = &lt;MouseEvent&gt;event;
@@ -421,7 +421,8 @@
     .stack-center
       .stacked-center
         h1 3rd-Party Type Declarations (The Easy Way)
-        code import * as $ from "jquery";
+        pre
+          code.typescript import * as $ from "jquery";
         .column-container
           .column.left-align
             .ft-fragment
@@ -432,8 +433,8 @@
                 |
                 | repository to find “high quality TypeScript type definitions.”
             .ft-fragment
-              p
-                code $ npm install @types/jquery -D
+              pre
+                code.bash $ npm install @types/jquery -D
               p TS will automatically use these @types modules.
             .ft-fragment
               p Use
@@ -461,11 +462,11 @@
           | declaration file (recommended).
         // .d.ts tells TS there is no actual code in there
         pre.left-align.ft-fragment
-          code
+          code.typescript
             | declare module "foobar"; // simply declare that a module exists
             | import * as f from "foobar";
         pre.left-align.ft-fragment
-          code
+          code.typescript
             | /// &lt;reference path="foobar.d.ts" /&gt;
             | import * as f from "foobar";
         p.ft-fragment Look at other libraries’ declarations and the DT website for best practices.
@@ -510,7 +511,7 @@
         .column-container
           .column.left-align.ft-fragment(style={"padding-right": "5em"})
             pre
-              code
+              code.json
                 |{
                 |    "files": [
                 |        "core.ts",
@@ -520,7 +521,7 @@
                 |}
           .column.left-align.ft-fragment(style={"padding-right": "5em"})
             pre
-              code
+              code.json
                 |{
                 |    "include": [
                 |        "src/**/*"
@@ -535,7 +536,7 @@
       .stacked-center
         h2 Compiler Options
         pre.ft-fragment.left-align
-          code
+          code.json
             |{
             |  "compilerOptions": {
             |      "module": "commonjs",
@@ -633,7 +634,7 @@
       .stacked-center
         h2 Included Declarations
         pre.ft-fragment.left-align
-          code(style={"font-size": "1em", "line-height": "1.25em"})
+          code.json(style={"font-size": "1em", "line-height": "1.25em"})
             |{
             |  "compilerOptions": {
             |    "lib": [
@@ -662,7 +663,7 @@
       .stacked-center
         h2 Migration Options
         pre.ft-fragment.left-align
-          code
+          code.json
             |{
             |  "compilerOptions": {
             |    "allowJs": true,

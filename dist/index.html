@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/themes/default.css">
     <link rel="stylesheet" href="assets/css/prism.css">
     <link rel="stylesheet" href="css/talk.css">
+    <link rel="stylesheet" href="css/highlight.css">
   </head>
   <body>
     <div class="flowtime ft-cross">
@@ -131,7 +132,7 @@
         <div class="ft-page" data-id="installing">
           <div class="stack-center">
             <div class="stacked-center">
-              <p><code>$ npm install -g typescript</code></p>
+              <pre><code class="bash">$ npm install -g typescript</code></pre>
             </div>
           </div>
         </div>
@@ -139,11 +140,11 @@
           <div class="stack-center">
             <div class="stacked-center">
               <div class="left-align">
-                <p><code class="pre">$ tsc app.ts</code></p>
-                <p class="ft-fragment"><code class="pre">$ tsc app     # assumes .ts extension</code></p>
-                <p class="ft-fragment"><code class="pre">$ tsc         # uses config</code></p>
-                <p class="ft-fragment"><code class="pre">$ tsc -p src  # set the root folder</code></p>
-                <p class="ft-fragment"><code class="pre">$ tsc -w      # watch for changes</code></p>
+                <pre><code class="bash">$ tsc app.ts</code></pre>
+                <pre class="ft-fragment"><code class="bash">$ tsc app     # assumes .ts extension</code></pre>
+                <pre class="ft-fragment"><code class="bash">$ tsc         # uses config</code></pre>
+                <pre class="ft-fragment"><code class="bash">$ tsc -p src  # set the root folder</code></pre>
+                <pre class="ft-fragment"><code class="bash">$ tsc -w      # watch for changes</code></pre>
               </div>
             </div>
           </div>
@@ -154,7 +155,7 @@
               <div class="column-container">
                 <div class="left-column left-align">
                   <h2>app.ts</h2>
-                  <pre><code>function greet(person) {
+                  <pre><code class="typescript">function greet(person) {
    return `Hello ${person}!`;
 }
 const name = 'John';
@@ -166,7 +167,7 @@ console.log(greet(name));</code></pre>
                 </div>
                 <div class="right-column left-align ft-fragment">
                   <h2>app.js</h2>
-                  <pre><code>function greet(person) {
+                  <pre><code class="javascript">function greet(person) {
    return "Hello " + person + "!";
 }
 var name = 'John';
@@ -184,7 +185,7 @@ console.log(greet(name));</code></pre>
               <div class="column-container">
                 <div class="left-column left-align">
                   <h2>app.ts</h2>
-                  <pre><code>function getName() {
+                  <pre><code class="typescript">function getName() {
    return Promise.resolve('John');
 }
 async function greetPerson() {
@@ -199,7 +200,7 @@ console.log(greetPerson());</code></pre>
                 </div>
                 <div class="right-column left-align ft-fragment">
                   <h2>app.js</h2>
-                  <pre><code>var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+                  <pre><code class="javascript">var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
    // snip
 };
 var __generator = (this && this.__generator) || function (thisArg, body) {
@@ -228,7 +229,7 @@ console.log(greetPerson());</code></pre>
             <div class="stacked-center">
               <div class="column-container">
                 <div class="left-column left-align">
-                  <pre><code>[] + [];
+                  <pre><code class="typescript">[] + [];
 
 
 
@@ -247,7 +248,7 @@ function add(a,b) {
                   <div>⇒</div>
                 </div>
                 <div class="right-column left-align ft-fragment">
-                  <pre><code>[] + [];
+                  <pre><code class="javascript">[] + [];
 // ^ Operator '+' cannot be applied to types 
 //   'undefined[]' and 'undefined[]'.
 
@@ -280,7 +281,7 @@ function add(a, b) {
             <div class="stacked-center">
               <div class="column-container">
                 <div class="left-column left-align">
-                  <pre><code>function greet(person: string) {
+                  <pre><code class="typescript">function greet(person: string) {
    return `Hello ${person}!`;
 }
 const name = 3;
@@ -291,7 +292,7 @@ console.log(greet(name));</code></pre>
                   <div>⇒</div>
                 </div>
                 <div class="right-column left-align ft-fragment">
-                  <pre><code>function greet(person) {
+                  <pre><code class="javascript">function greet(person) {
    return "Hello " + person + "!";
 }
 var name = 3;
@@ -319,19 +320,19 @@ let n: null = null;</code></pre>
                   </div>
                   <div class="ft-fragment left-align">
                     <h3>Arrays</h3>
-                    <pre><code>let boolArray: boolean[];</code></pre>
+                    <pre><code class="typescript">let boolArray: boolean[];</code></pre>
                   </div>
                 </div>
                 <div class="column">
                   <div class="ft-fragment left-align">
                     <h3><code>Any</code></h3>
-                    <pre><code>let notSure: any = 4;
+                    <pre><code class="typescript">let notSure: any = 4;
 notSure = "maybe a string instead";
 notSure.ifItExists();</code></pre>
                   </div>
                   <div class="ft-fragment left-align">
                     <h3>Functions</h3>
-                    <pre><code>function getHello(name: string): string { return `Hello ${name}`; }
+                    <pre><code class="typescript">function getHello(name: string): string { return `Hello ${name}`; }
 function warn(): void { alert("Warning!"); }
 function error(): never { throw new Error("Error!"); }</code></pre>
                   </div>
@@ -346,16 +347,16 @@ function error(): never { throw new Error("Error!"); }</code></pre>
               <h2>Extended Types</h2>
               <div class="ft-fragment left-align">
                 <h3>Enum</h3>
-                <pre><code>enum Color {Red, Green, Blue}
+                <pre><code class="typescript">enum Color {Red, Green, Blue}
 let c: Color = Color.Green;</code></pre>
               </div>
               <div class="ft-fragment left-align">
                 <h3>Union</h3>
-                <pre><code>let numOrString: number|string;</code></pre>
+                <pre><code class="typescript">let numOrString: number|string;</code></pre>
               </div>
               <div class="ft-fragment left-align">
                 <h3>Optional Parameter</h3>
-                <pre><code>function getHello(firstName: string, lastName?: string): string {
+                <pre><code class="typescript">function getHello(firstName: string, lastName?: string): string {
    return `Hello ${firstName} ${lastName || ''}`;
 }</code></pre>
                 <!-- can be undefined-->
@@ -370,7 +371,7 @@ let c: Color = Color.Green;</code></pre>
               <h2>Interface</h2>
               <div class="column-container left-align">
                 <div class="left-column left-align">
-                  <pre><code>interface Point {
+                  <pre><code class="typescript">interface Point {
    x: number;
    y: number;
    z?: number;
@@ -389,7 +390,7 @@ let p: Point = new MyPoint();</code></pre>
                   <div>⇒</div>
                 </div>
                 <div class="right-column left-align ft-fragment">
-                  <pre><code>var p1 = {
+                  <pre><code class="javascript">var p1 = {
    x: 1, y: 2, z: 3
 };
 var MyPoint = (function () {
@@ -412,14 +413,14 @@ var p2 = new MyPoint();</code></pre>
               <h2>More Keywords</h2>
               <div class="ft-fragment left-align">
                 <h3>Readonly</h3>
-                <pre><code>interface Point {
+                <pre><code class="typescript">interface Point {
    readonly x: number;
    readonly y: number;
 }</code></pre>
               </div>
               <div class="ft-fragment left-align">
                 <h3>Public/Private/Protected</h3>
-                <pre><code>class Animal {
+                <pre><code class="typescript">class Animal {
    private name: string;
    constructor(theName: string) { this.name = theName; }
 }
@@ -434,8 +435,8 @@ new Animal("Cat").name; // error!</code></pre>
               <h2>Inference</h2>
               <p>Typescript can often figure out types by examining your code.</p>
               <div class="left-align">
-                <pre class="ft-fragment"><code>let x = 3;</code></pre>
-                <pre class="ft-fragment"><code>let x = [0, 1, null];</code></pre>
+                <pre class="ft-fragment"><code class="typescript">let x = 3;</code></pre>
+                <pre class="ft-fragment"><code class="typescript">let x = [0, 1, null];</code></pre>
               </div>
               <p class="ft-fragment">So type annotations are only needed where you want to:
                 <ul>
@@ -462,14 +463,14 @@ new Animal("Cat").name; // error!</code></pre>
               <h2>Generics</h2>
               <p class="ft-fragment">
                 Example syntax:
-                <code>Array&lt;number&gt;</code>
+                <code class="typescript">Array&lt;number&gt;</code>
               </p>
-              <pre class="ft-fragment left-align"><code>class Queue&lt;T&gt; {
+              <pre class="ft-fragment left-align"><code class="typescript">class Queue&lt;T&gt; {
    private data = [];
    push = (item: T) =&gt; this.data.push(item);
    pop = (): T =&gt; this.data.shift();
 }</code></pre>
-              <pre class="ft-fragment left-align"><code>const queue = new Queue&lt;number&gt;();
+              <pre class="ft-fragment left-align"><code class="typescript">const queue = new Queue&lt;number&gt;();
 queue.push(0);</code></pre>
               <!-- familiar if you work with OOP languages like Java, C++-->
               <!-- typically used with classes-->
@@ -487,7 +488,7 @@ queue.push(0);</code></pre>
                 </p>
               </div>
               <div class="ft-fragment left-align">
-                <pre><code>function handler(event: Event) {
+                <pre><code class="typescript">function handler(event: Event) {
    let mouseEvent = event as MouseEvent; // preferred
    let mouseEvent = &lt;MouseEvent&gt;event;
 }</code></pre>
@@ -498,7 +499,8 @@ queue.push(0);</code></pre>
         <div class="ft-page" data-id="type-declarations-easy">
           <div class="stack-center">
             <div class="stacked-center">
-              <h1>3rd-Party Type Declarations (The Easy Way)</h1><code>import * as $ from "jquery";</code>
+              <h1>3rd-Party Type Declarations (The Easy Way)</h1>
+              <pre><code class="typescript">import * as $ from "jquery";</code></pre>
               <div class="column-container">
                 <div class="column left-align">
                   <div class="ft-fragment">
@@ -509,7 +511,7 @@ queue.push(0);</code></pre>
                     </p>
                   </div>
                   <div class="ft-fragment">
-                    <p><code>$ npm install @types/jquery -D</code></p>
+                    <pre><code class="bash">$ npm install @types/jquery -D</code></pre>
                     <p>TS will automatically use these @types modules.</p>
                   </div>
                   <div class="ft-fragment">
@@ -538,9 +540,9 @@ queue.push(0);</code></pre>
                 declaration file (recommended).
               </p>
               <!-- .d.ts tells TS there is no actual code in there-->
-              <pre class="left-align ft-fragment"><code>declare module "foobar"; // simply declare that a module exists
+              <pre class="left-align ft-fragment"><code class="typescript">declare module "foobar"; // simply declare that a module exists
 import * as f from "foobar";</code></pre>
-              <pre class="left-align ft-fragment"><code>/// &lt;reference path="foobar.d.ts" /&gt;
+              <pre class="left-align ft-fragment"><code class="typescript">/// &lt;reference path="foobar.d.ts" /&gt;
 import * as f from "foobar";</code></pre>
               <p class="ft-fragment">Look at other libraries’ declarations and the DT website for best practices.</p>
             </div>
@@ -590,7 +592,7 @@ import * as f from "foobar";</code></pre>
               <h2>Specifying Files</h2>
               <div class="column-container">
                 <div class="column left-align ft-fragment" style="padding-right:5em;">
-                  <pre><code>{
+                  <pre><code class="json">{
    "files": [
        "core.ts",
        "sys.ts",
@@ -599,7 +601,7 @@ import * as f from "foobar";</code></pre>
 }</code></pre>
                 </div>
                 <div class="column left-align ft-fragment" style="padding-right:5em;">
-                  <pre><code>{
+                  <pre><code class="json">{
    "include": [
        "src/**/*"
    ],
@@ -617,7 +619,7 @@ import * as f from "foobar";</code></pre>
           <div class="stack-center">
             <div class="stacked-center">
               <h2>Compiler Options</h2>
-              <pre class="ft-fragment left-align"><code>{
+              <pre class="ft-fragment left-align"><code class="json">{
  "compilerOptions": {
      "module": "commonjs",
      "noImplicitAny": true,
@@ -682,7 +684,7 @@ import * as f from "foobar";</code></pre>
           <div class="stack-center">
             <div class="stacked-center">
               <h2>Included Declarations</h2>
-              <pre class="ft-fragment left-align"><code style="font-size:1em;line-height:1.25em;">{
+              <pre class="ft-fragment left-align"><code class="json" style="font-size:1em;line-height:1.25em;">{
  "compilerOptions": {
    "lib": [
      "es5",
@@ -711,7 +713,7 @@ import * as f from "foobar";</code></pre>
           <div class="stack-center">
             <div class="stacked-center">
               <h2>Migration Options</h2>
-              <pre class="ft-fragment left-align"><code>{
+              <pre class="ft-fragment left-align"><code class="json">{
  "compilerOptions": {
    "allowJs": true,
    "checkJs": true
@@ -865,10 +867,12 @@ import * as f from "foobar";</code></pre>
     <script src="js/brav1toolbox.js"></script>
     <script src="js/flowtime.js"></script>
     <script src="assets/js/prism.js"></script>
+    <script src="assets/js/highlight.min.js"></script>
     <script>
       Flowtime.showProgress(true);
       Flowtime.clicker(true);
       Flowtime.start();
+      hljs.initHighlightingOnLoad();
     </script>
   </body>
 </html>
