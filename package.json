@@ -31,7 +31,7 @@
   "devDependencies": {
     "Flowtime.js": "github:marcolago/flowtime.js#master",
     "gh-pages": "^0.12.0",
-    "highlight.js": "^9.12.0",
+    "highlight.js": "^10.1.2",
     "http-server": "^0.9.0",
     "mkdirp": "^0.5.1",
     "npm-run-all": "^4.0.2",
